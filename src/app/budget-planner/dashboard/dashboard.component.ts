@@ -27,8 +27,8 @@ currentMonthExpense = '$1500';
     {description: 'buy groceries'},
     {description: 'call insurance company'},
   ];
-
-
+  totalCurrentMonthIncome =2000;
+  totalCurrentMonthExpense =2000;
   constructor(public router:Router){}
 
   onIncome() {
@@ -40,6 +40,9 @@ currentMonthExpense = '$1500';
   }
   onTodo() {
     this.router.navigate(['/budget-planner/todo']);
+  }
+  get CurrentMonthSavings(): number{
+      return this.totalCurrentMonthIncome = this.totalCurrentMonthExpense;
   }
 
 }
