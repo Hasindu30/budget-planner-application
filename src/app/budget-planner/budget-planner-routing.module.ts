@@ -10,14 +10,16 @@ import { HistoryComponent } from './history/history.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'side-nav',component:SideNavComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'income',component:IncomeComponent},
-  {path:'expense',component:ExpenseComponent},
-  {path:'todo',component:TodoComponent},
-  {path:'history',component:HistoryComponent},
-  {path:'profile',component:ProfileComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },  // Default route to login page
+  { path: 'login', component: LoginComponent },
+  { path: 'side-nav', component: SideNavComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'income', component: IncomeComponent },
+  { path: 'expense', component: ExpenseComponent },
+  { path: 'todo', component: TodoComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }  // Wildcard route to handle unknown routes
 ];
 
 @NgModule({
