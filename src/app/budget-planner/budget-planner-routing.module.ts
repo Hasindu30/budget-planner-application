@@ -10,8 +10,8 @@ import { HistoryComponent } from './history/history.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },  // Default route to login page
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },  // Redirect base URL to login page
+  { path: 'login', component: LoginComponent },  // Define login route
   { path: 'side-nav', component: SideNavComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'income', component: IncomeComponent },
@@ -19,11 +19,11 @@ const routes: Routes = [
   { path: 'todo', component: TodoComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' }  // Wildcard route to handle unknown routes
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }  // Catch-all route to redirect to login if no other routes match
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],  // Use forRoot for the main routing module
   exports: [RouterModule]
 })
 export class BudgetPlannerRoutingModule { }
